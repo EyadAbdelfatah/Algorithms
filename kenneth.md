@@ -16,23 +16,48 @@ function rockPaperScissors(input) {
     }
   }
 
-function getHistory() {
-  DOMSelectors.content.innerHTML = "";
-  DOMSelectors.history.innerHTML = "";
-  let win = 0;
-  let lose = 0;
-  let draw = 0;
-
-  for (let i = 0; i < history.length; i++) {
-    if (history[i] == "win") {
-      win++;
-    } else if (history[i] == "lose") {
-      lose++;
+  if (opponentChoice == "rock") {
+    if (input == 1) {
+      outcome = "win";
+    } else if (input == 2) {
+      outcome = "lose";
     } else {
-      draw++;
-    }}
-```
+      outcome = "draw";
+    }
+  } else if (opponentChoice == "paper") {
+    if (input == 2) {
+      outcome = "win";
+    } else if (input == 0) {
+      outcome = "lose";
+    } else {
+      outcome = "draw";
+    }
+  } else {
+    if (input == 0) {
+      outcome = "win";
+    } else if (input == 1) {
+      outcome = "lose";
+    } else {
+      outcome = "draw";
+    }
+  }
+  history.push(outcome);
 
-They contains sequencing (has lines of code) 
-They contains iteration (it has a for loop)
-They contains selection (it has if statements)
+  DOMSelectors.history.innerHTML = "";
+  DOMSelectors.content.insertAdjacentHTML(
+    "afterbegin",
+    `<div class="card" id="${outcome}">
+    <p>Your choice: ${returnInput(input).toUpperCase()}</p>
+    <p>Opponent choice: ${opponentChoice.toUpperCase()}</p>
+    <h4>${outcome.toUpperCase()}</h4>
+    </div>
+    `
+  );
+}
+ 
+```
+This function decides what the choice wil be (rock,paper,scissors) and then based on that decides the result of the rock paper scissors (win,lose,draw)
+This contains sequencing (has lines of code) 
+This contains iteration (it has a for loop); to continue playing
+This contains selection (it has if statements); to go through and select the choice
+Therefore, it's an algorithm
