@@ -16,10 +16,9 @@ function ToBinaryConversion(number) {
 
 function toNumberConversion(binary) {
   let result = 0;
-  binary = binary.toString().split("").reverse("").map(Number);
-  for (let i = 1; i <= binary.length; i++) {
+  binary = binary.toString().split("").reverse().map(Number);
+  for (let i = 0; i < binary.length; i++) {
     result += binary[i] * Math.pow(2, i);
   }
   return result;
 }
-console.log(toNumberConversion(1011));
