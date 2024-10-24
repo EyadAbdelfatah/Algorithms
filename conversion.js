@@ -1,4 +1,4 @@
-function ToBinaryConversion(number) {
+function toBinaryConversion(number) {
   let result = "";
   let remainder;
   while (number >= 1) {
@@ -22,3 +22,6 @@ function toNumberConversion(binary) {
   }
   return result;
 }
+
+console.log(toNumberConversion("11011"));
+console.log(toBinaryConversion(15));
