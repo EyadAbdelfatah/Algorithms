@@ -22,6 +22,3 @@ function toNumberConversion(binary) {
   }
   return result;
 }
-
-console.log(toNumberConversion("11011"));
-console.log(toBinaryConversion(15));
